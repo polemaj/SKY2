@@ -6,7 +6,6 @@ var monoSpace = '```'
 
 exports.listmenu = (sender,prefix,ad,namenya,premnya,usernya,romnya,tanggal,jam,no) => {
 return`
-━━━❲ DENARA-BOT ━━━
 
  𝗨𝗦𝗘𝗥 𝗜𝗡𝗙𝗢
  ID : @${sender.split('@')[0]}
@@ -23,7 +22,6 @@ return`
 
  𝙈𝘼𝙄𝙉 𝙈𝙀𝙉𝙐 
  ${no++} ➳ ${prefix}menu
- ${no++} ➳ ${prefix}iklan
  ${no++} ➳ ${prefix}rules
  ${no++} ➳ ${prefix}owner
  ${no++} ➳ ${prefix}script
@@ -726,12 +724,12 @@ return`──「 *MENU DONATE* 」──
 Hi *${cekName}* ${ucapanWaktu} 👋🏻
 
 *Payment Ovo*
-Number: 085727492435
-A/N: SUTARSIH
+Number : 6285692242215
+A/N:   V
 
 *Payment Dana*
-Number: 085727492435
-A/N: SUTARSIH
+Number : 6285692242215
+A/N: V
 
 ${monoSpace}Terimakasih untuk kamu yang sudah donasi untuk perkembangan bot ini ^_^${monoSpace}
 
@@ -742,17 +740,17 @@ exports.infoOwner = () =>{
 return`──「 *INFO OWNER* 」──
 
  *Data Profil*
- • *Nama:* Denara Bot
- • *Umur:* 17 tahun
- • *Hoby:* Turu/Game
- • *Askot:* Jateng
- • *Konten:* Creator
+ • *Nama:* 
+ • *Umur:* 
+ • *Hoby:* 
+ • *Askot:* 
+ • *Konten:* 
 
 _iam developer bot whatsapp._
 
  *Sosial Media*
- • *Whatsapp:* 081215626270
- • *Youtube:* Denara Bot
- • *Github:* DenaraBot
+ • *Whatsapp:* 
+ • *Youtube:* 
+ • *Github:* 
  `
 }
