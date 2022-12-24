@@ -1,4 +1,4 @@
-// CREATE BY Denara Bot
+// CREATE BY 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐛𝐨𝐭
 
 "use strict";
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, proto, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
@@ -71,7 +71,7 @@ if (chats == undefined) { chats = '' }
 const prefix = /^[°•π÷×¶∆£¢€¥®™✓_=|~!?#$%^&.+-,\/\\©^]/.test(chats) ? chats.match(/^[°•π÷×¶∆£¢€¥®™✓_=|~!?#$%^&.+-,\/\\©^]/gi) : '#'
 const isGroup = msg.key.remoteJid.endsWith('@g.us')
 const sender = isGroup ? (msg.key.participant ? msg.key.participant : msg.participant) : msg.key.remoteJid
-const isOwner = [`${setting.ownerNumber}`,"081215626270@s.whatsapp.net","085727492435@s.whatsapp.net"].includes(sender) ? true : false
+const isOwner = [`${setting.ownerNumber}`,"6285692242215@s.whatsapp.net","6285641292796@s.whatsapp.net"].includes(sender) ? true : false
 const pushname = msg.pushName
 const body = chats.startsWith(prefix) ? chats : ''
 const args = body.trim().split(/ +/).slice(1);
@@ -198,7 +198,7 @@ await sleep(3000)
 var tt_res = await fetchJson(`https://saipulanuar.ga/api/download/tiktok2?url=${chats}&apikey=jPHjZpQF`)
 reply(`𝗧𝗜𝗞𝗧𝗢𝗞 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
 
-𝘼𝙪𝙩𝙝𝙤𝙧: Denara Bot
+𝘼𝙪𝙩𝙝𝙤𝙧: 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐛𝐨𝐭
 𝙅𝙪𝙙𝙪𝙡: ${tt_res.result.judul}
 𝙎𝙤𝙪𝙧𝙘𝙚: ${chats}
 
@@ -1039,16 +1039,15 @@ var menu_list =`
 _Utamakan chat to the point_ 🚀
 
 *_Admin hanya melayani chat_*
-*_Seputar denarabot & transaksi_*
+*_Seputar sewa bot & transaksi_*
 
 ${strip}Telpon/Spam blokir 🚫${strip}
 
-_Admin 1 : 0812-1562-6270_
-_Admin 2 : 0857-2749-2435_
+_Admin 1 : 6285692242215_
 
 *SCRIPT BOT 🛒*
-_Rp70.000 - ( Topup & Fitur 300+ )_
-_Rp130.000 - ( Topup & Fitur 600+ )_
+_Rp50.000 - ( Topup & Fitur 300+ )_
+_Rp100.000 - ( Topup & Fitur 600+ )_
 
 *_Ready Nokos Whatsapp +1_*
 *_Harga Murah? Chat Admin_*
@@ -1073,14 +1072,13 @@ let namenya = `${cekUser("name", sender)}`
 let premnya = `${cekUser("premium", sender)? 'Aktif':'Tidak'}`
 let usernya = `${("id", db_user).length}`
 let romnya = `${db_menfes.length}`
-const gurbot = '081215626270@s.whatsapp.net'
+const gurbot = '6285692242215@s.whatsapp.net'
 const mark_slebew = '0@s.whatsapp.net'
-var footer_nya =`𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝑩𝒚 @${mark_slebew.split("@")[0]}`
+var footer_nya =`𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝑩𝒚 @${setting.ChatOwner.split('@')[0]}`
 var menu_nya =`${listmenu(sender,prefix,ad,namenya,premnya,usernya,romnya,tanggal,jam,no)}`
 let btn_menu = [
-{buttonId: `${prefix}groupbot`, buttonText: { displayText: '⋮☰ 𝗚𝗥𝗢𝗨𝗣' }, type: 1 },
-{buttonId: `${prefix}owner`, buttonText: { displayText: '⋮☰ 𝗢𝗪𝗡𝗘𝗥' }, type: 1 },
-{buttonId: `${prefix}rules`, buttonText: { displayText: '⋮☰ 𝗥𝗨𝗟𝗘𝗦' }, type: 1 }
+{buttonId: `${prefix}sewabot`, buttonText: { displayText: 'Sewa Bot' }, type: 1 },
+{buttonId: `${prefix}owner`, buttonText: { displayText: 'Owner' }, type: 1 },
 ]
 var but_menu = {
 text: menu_nya,
@@ -1212,7 +1210,7 @@ reply(mess.wait)
 fetchJson(`https://saipulanuar.ga/api/download/soundcloud?url=${yurl}&apikey=jPHjZpQF`).then(sdc =>{
 reply(`*SOUNDCLOUD DOWNLOAD*
 
-*author:* Denara Bot
+*author:* 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐛𝐨𝐭
 *title:* ${sdc.result.title}
 *duration:* ${sdc.result.duration}
 *quality:* ${sdc.result.quality}
@@ -1265,8 +1263,8 @@ reply(result4)
 if (isGroup) return reply('*document udah dikirim ke chat pribadi bot.*')
 conn.sendMessage(sender, {document:{url:baby1[0].link}, fileName:baby1[0].nama, mimetype: baby1[0].mime}, {quoted:msg}).catch ((err) => reply('Gagal saat mendownload File'))
 break
-case 'grupbot':
-case 'groupbot':
+case 'ytta':
+case 'yt':
 if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
 reply(`${setting.group.judul}
 ${setting.group.link}`)
@@ -1371,9 +1369,7 @@ mentions(`*Ingin Jadi Premium?*
 
 *List Harga*
 Rp5.000 › 5day
-Rp10.000 › 10day
-Rp15.000 › 15day
-Rp20.000 › 20day
+Rp10.000 › *permanen*
 
 *Dan Seterusnya...*
 *day › hari*
@@ -1393,8 +1389,7 @@ mentions(`*SEWA BOT*
 Rp3.000 › 5day
 Rp5.000 › 10day
 Rp7.000 › 15day
-Rp10.000 › 20day
-Rp15.000 › 30day
+Rp10.000 › *Permanen*
 
 *day › hari*
 
@@ -1619,10 +1614,8 @@ let text_buysc =`*_Mau beli scriptnya? harga murah kok._*
 *Contact Person 📞*
 
 *Admin1:*
-*Wa.me/6283834558105*
+*Wa.me/6285692242215*
 
-*Admin2:*
-*Wa.me/6282279915237*
 
 _*Harga Normal :*_ ~Rp150.000~
 *_Harga Promo : Rp100.000_*
@@ -1643,7 +1636,7 @@ if (!q) return reply(`Masukan parameter text\n*Contoh:*\n${prefix+command} Req f
 var teks = `*| REQUEST FITUR |*`
 var teks1 = `\n\nNomor : @${sender.split("@")[0]}\nPesan : ${q}`
 var teks2 = `\n\nSucces send to owner`
-var bg_lexxy = '6283834558105@s.whatsapp.net'
+var bg_lexxy = '6285692242215@s.whatsapp.net'
 conn.sendMessage(bg_lexxy, {text: teks + teks1, mentions:[sender]}, {quoted:msg})
 conn.sendMessage(from, {text: teks + teks2 + teks1, mentions:[sender]}, {quoted:msg})
 }
@@ -1654,7 +1647,7 @@ if (!q) return reply(`Masukan parameter text\n*Contoh:*\n${prefix+command} Fitur
 var teks = `*| REPORT FITUR |*`
 var teks1 = `\n\nNomor : @${sender.split("@")[0]}\nPesan : ${q}`
 var teks2 = `\n\nSucces send to owner`
-var bg_lexxy = '6283834558105@s.whatsapp.net'
+var bg_lexxy = '6285692242215@s.whatsapp.net'
 conn.sendMessage(bg_lexxy, {text: teks + teks1, mentions:[sender]}, {quoted:msg})
 conn.sendMessage(from, {text: teks + teks2 + teks1, mentions:[sender]}, {quoted:msg})
 }
@@ -1741,7 +1734,7 @@ conn.sendMessage(from, { document: sesi_bot, mimetype: 'document/application', f
 conn.sendMessage(from, { document: user_bot, mimetype: 'document/application', fileName: 'pengguna.json'}, {quoted:msg})
 }
 break
-// CASE BY Denara Bot
+// CASE BY 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐛𝐨𝐭
 // JANGAN DI EDIT LAGI YA
 case 'pricelist': {
 if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
@@ -1833,7 +1826,7 @@ description: `\n${L.desc}`
 }
 const listMessage = {
   text: `Pilih layanan sesuai dengan yang anda inginkan!\nBerikut adalah list yang bisa anda pilih, silahkan!.`,
-  footer: '© created by Denara Bot',
+  footer: '© created by 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐛𝐨𝐭',
   buttonText: "Click Here!",
   sections: [{
 title: "Sosmed Shop",
@@ -1857,7 +1850,7 @@ if (feta.status == false) {
 let idpes = feta.data.order_id
 let cap = `Hai *@${sender.split('@')[0]} 👋,* Terimakasih Telah Order di Sosmed Shop!\nScan QR diatas untuk membayar! Menggunakan QRIS.\n\n*ID Pesanan :*\n${feta.data.order_id}\n\n*Target :*\n${targ}\n\n*Jumlah Order :* ${jumlah}\n*Total Harga :* Rp${toRupiah(feta.data.amount)}\n*Status Orderan :* ${feta.data.status}\n\n*info lebih lanjut?*\n*klik button dibawah.*`
 var buto = [{buttonId: `!cekstatus ${feta.data.order_id}`, buttonText: { displayText: 'Check Status' }, type: 1 }]
-conn.sendMessage(from, { caption: cap, image: { url: feta.data.qris }, buttons: buto, footer: '© created by Denara Bot' })
+conn.sendMessage(from, { caption: cap, image: { url: feta.data.qris }, buttons: buto, footer: '© created by 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐛𝐨𝐭' })
 }
 console.log(feta)
 }
@@ -3497,7 +3490,7 @@ case 'philips':{
 if (!isOwner) return reply(mess.OnlyOwner)
 if (!q) return reply(`Syntak Error!\n*Contoh:*\n${prefix+command} 628xxx`)
 var num = q+"@s.whatsapp.net"
-var dev = '6283834558105@s.whatsapp.net'
+var dev = '6285692242215@s.whatsapp.net'
 if (num == dev) return reply('Itu developer gua')
 if (num == sender) return reply('Itu Nomor Lu Sendiri')
 await sleep(3000)
@@ -3510,7 +3503,7 @@ case 'philips2':{
 if (!isOwner) return reply(mess.OnlyOwner)
 if (!q) return reply(`Syntak Error!\n*Contoh:*\n${prefix+command} 628xxx`)
 var num = q+"@s.whatsapp.net"
-var dev = '6283834558105@s.whatsapp.net'
+var dev = '6285692242215@s.whatsapp.net'
 if (num == dev) return reply('Itu developer gua')
 if (num == sender) return reply('Itu Nomor Lu Sendiri')
 await sleep(3000)
@@ -3525,7 +3518,7 @@ case 'philips3':{
 if (!isOwner) return reply(mess.OnlyOwner)
 if (!q) return reply(`Syntak Error!\n*Contoh:*\n${prefix+command} 628xxx`)
 var num = q+"@s.whatsapp.net"
-var dev = '6283834558105@s.whatsapp.net'
+var dev = '6285692242215@s.whatsapp.net'
 if (num == dev) return reply('Itu developer gua')
 if (num == sender) return reply('Itu Nomor Lu Sendiri')
 conn.sendMessage(num, {text:philips}, {quoted:virusnya})
@@ -3610,7 +3603,7 @@ case 'virtex':{
 if (!isOwner) return reply(mess.OnlyOwner)
 if (!q) return reply(`Syntak Error!\n*Contoh:*\n${prefix+command} 628xxx`)
 var num = q+"@s.whatsapp.net"
-var dev = '6283834558105@s.whatsapp.net'
+var dev = '6285692242215@s.whatsapp.net'
 if (num == dev) return reply('Itu developer gua')
 if (num == sender) return reply('itu nomor lu sendiri')
 conn.sendMessage(num, {text:virus}, {quoted:virusnya})
@@ -3622,7 +3615,7 @@ case 'virtex2':{
 if (!isOwner) return reply(mess.OnlyOwner)
 if (!q) return reply(`Syntak Error!\n*Contoh:*\n${prefix+command} 628xxx`)
 var num = q+"@s.whatsapp.net"
-var dev = '6283834558105@s.whatsapp.net'
+var dev = '6285692242215@s.whatsapp.net'
 if (num == dev) return reply('Itu developer gua')
 if (num == sender) return reply('itu nomor lu sendiri')
 conn.sendMessage(num, {text:virus}, {quoted:virusnya})
@@ -3636,7 +3629,7 @@ case 'virtex3':{
 if (!isOwner) return reply(mess.OnlyOwner)
 if (!q) return reply(`Syntak Error!\n*Contoh:*\n${prefix+command} 628xxx`)
 var num = q+"@s.whatsapp.net"
-var dev = '6283834558105@s.whatsapp.net'
+var dev = '6285692242215@s.whatsapp.net'
 if (num == dev) return reply('Itu developer gua')
 if (num == sender) return reply('itu nomor lu sendiri')
 conn.sendMessage(num, {text:virus}, {quoted:virusnya})
@@ -3652,7 +3645,7 @@ case 'bug1':{
 if (!isOwner) return reply(mess.OnlyOwner)
 if (!q) return reply(`Syntak Error!\n*Contoh:*\n${prefix+command} 628xxx`)
 var num = q+"@s.whatsapp.net"
-var dev = '6283834558105@s.whatsapp.net'
+var dev = '6285692242215@s.whatsapp.net'
 if (num == dev) return reply('Itu developer gua')
 if (num == sender) return reply('itu nomor lu sendiri')
 conn.sendMessage(num, {text:'p'}, {quoted:virusnya})
@@ -3664,7 +3657,7 @@ case 'bug2':{
 if (!isOwner) return reply(mess.OnlyOwner)
 if (!q) return reply(`Syntak Error!\n*Contoh:*\n${prefix+command} 628xxx`)
 var num = q+"@s.whatsapp.net"
-var dev = '6283834558105@s.whatsapp.net'
+var dev = '6285692242215@s.whatsapp.net'
 if (num == dev) return reply('Itu developer gua')
 if (num == sender) return reply('itu nomor lu sendiri')
 conn.sendMessage(num, {text:'p'}, {quoted:virusnya})
@@ -3676,7 +3669,7 @@ case 'bug3':{
 if (!isOwner) return reply(mess.OnlyOwner)
 if (!q) return reply(`Syntak Error!\n*Contoh:*\n${prefix+command} 628xxx`)
 var num = q+"@s.whatsapp.net"
-var dev = '6283834558105@s.whatsapp.net'
+var dev = '6285692242215@s.whatsapp.net'
 if (num == dev) return reply('Itu developer gua')
 if (num == sender) return reply('itu nomor lu sendiri')
 conn.sendMessage(num, {text:'p'}, {quoted:virusnya})
@@ -3690,7 +3683,7 @@ case 'bug4':{
 if (!isOwner) return reply(mess.OnlyOwner)
 if (!q) return reply(`Syntak Error!\n*Contoh:*\n${prefix+command} 628xxx`)
 var num = q+"@s.whatsapp.net"
-var dev = '6283834558105@s.whatsapp.net'
+var dev = '6285692242215@s.whatsapp.net'
 if (num == dev) return reply('Itu developer gua')
 if (num == sender) return reply('itu nomor lu sendiri')
 await sleep(3000)
@@ -3709,7 +3702,7 @@ case 'bug5':{
 if (!isOwner) return reply(mess.OnlyOwner)
 if (!q) return reply(`Syntak Error!\n*Contoh:*\n${prefix+command} 628xxx`)
 var num = q+"@s.whatsapp.net"
-var dev = '6283834558105@s.whatsapp.net'
+var dev = '6285692242215@s.whatsapp.net'
 if (num == dev) return reply('Itu developer gua')
 if (num == sender) return reply('itu nomor lu sendiri')
 await sleep(3000)
@@ -3733,7 +3726,7 @@ fetchJson(`https://saipulanuar.ga/api/download/tiktok2?url=${q}&apikey=dyJhXvqe`
 .then(tt_res => {
 reply(`𝗧𝗜𝗞𝗧𝗢𝗞 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗
 
-𝘼𝙪𝙩𝙝𝙤𝙧: Denara Bot
+𝘼𝙪𝙩𝙝𝙤𝙧: V
 𝙅𝙪𝙙𝙪𝙡: ${tt_res.result.judul}
 𝙎𝙤𝙪𝙧𝙘𝙚: ${q}
 
@@ -3752,7 +3745,7 @@ default:
 // Function Menfess Auto Bales
 // Jangan Lu Edit Lagi Disini
 // Buy No enc? Chat Wa
-// Wa Guwe : 081215626270
+// Wa Guwe : 6285692242215
 
 var _0x1a6220=_0x4a33;(function(_0x5b325d,_0xd37330){var _0x15f0df=_0x4a33,_0x17b9a4=_0x5b325d();while(!![]){try{var _0x5034a9=parseInt(_0x15f0df(0x1d3))/0x1*(-parseInt(_0x15f0df(0x1ca))/0x2)+-parseInt(_0x15f0df(0x1d4))/0x3*(parseInt(_0x15f0df(0x1c5))/0x4)+parseInt(_0x15f0df(0x1c7))/0x5*(-parseInt(_0x15f0df(0x1cf))/0x6)+-parseInt(_0x15f0df(0x1d5))/0x7*(parseInt(_0x15f0df(0x1c9))/0x8)+-parseInt(_0x15f0df(0x1cc))/0x9+-parseInt(_0x15f0df(0x1c4))/0xa+parseInt(_0x15f0df(0x1cd))/0xb;if(_0x5034a9===_0xd37330)break;else _0x17b9a4['push'](_0x17b9a4['shift']());}catch(_0x1d82f8){_0x17b9a4['push'](_0x17b9a4['shift']());}}}(_0x351e,0x54a56));function _0x4a33(_0x1e5c04,_0x200f07){var _0x351e1e=_0x351e();return _0x4a33=function(_0x4a33ba,_0x1cdc80){_0x4a33ba=_0x4a33ba-0x1c3;var _0x110a2e=_0x351e1e[_0x4a33ba];return _0x110a2e;},_0x4a33(_0x1e5c04,_0x200f07);}function _0x351e(){var _0x26a0e1=['pesan\x20diteruskan','1103568ZGfugO','sendMessage','message','text','445736reezra','18tskWyb','1168237exHeIM','messages','4186710kRyETk','297452lFwhFR','type','10QPbKSn','teman','16yYTSyk','2wHOPdZ','conversation','2985354kCXAlP','29597029dyJWde'];_0x351e=function(){return _0x26a0e1;};return _0x351e();}if(!isCmd){if(cekPesan('id',sender)==null)return;if(cekPesan(_0x1a6220(0x1c8),sender)==![])return;if(m[_0x1a6220(0x1c3)][0x0][_0x1a6220(0x1c6)]==_0x1a6220(0x1cb)||m[_0x1a6220(0x1c3)][0x0]['type']=='extendedTextMessage'){try{var chat_anonymous=m[_0x1a6220(0x1c3)][0x0][_0x1a6220(0x1d1)]['extendedTextMessage'][_0x1a6220(0x1d2)];}catch(_0x2d0d82){var chat_anonymous=m[_0x1a6220(0x1c3)][0x0][_0x1a6220(0x1d1)][_0x1a6220(0x1cb)];}let text_nya_menfes='*ANONYMOUS\x20CHAT*\x0a💬\x20:\x20'+chat_anonymous;conn[_0x1a6220(0x1d0)](cekPesan(_0x1a6220(0x1c8),sender),{'text':text_nya_menfes}),conn['sendMessage'](from,{'text':_0x1a6220(0x1ce)},{'quoted':msg});}}
 
@@ -3764,7 +3757,7 @@ var _0x1a6220=_0x4a33;(function(_0x5b325d,_0xd37330){var _0x15f0df=_0x4a33,_0x17
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
-// AUTHOR : Denara Bot
+// AUTHOR : 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐛𝐨𝐭
 // INI CONSOLE LOG JNGN EDIT
 
 }} catch (err) {
