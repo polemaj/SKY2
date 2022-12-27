@@ -1062,6 +1062,13 @@ _Rp100.000 - ( Topup & Fitur 600+ )_
 reply(menu_list)
 }
 break
+case 'gcbot':{
+if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
+var strip = '```'
+var menu_list =`https://chat.whatsapp.com/KqGx272nHhV6lW1qxLmNOp`
+reply(menu_list)
+}
+break
 case 'menu':{
 if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
 const more = String.fromCharCode(8206)
@@ -1074,7 +1081,7 @@ let usernya = `${("id", db_user).length}`
 let romnya = `${db_menfes.length}`
 const gurbot = '6285692242215@s.whatsapp.net'
 const mark_slebew = '0@s.whatsapp.net'
-var footer_nya =`𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝑩𝒚 @${setting.ChatOwner.split('@')[0]}`
+var footer_nya =`*Owner* @${setting.ChatOwner.split('@')[0]}`
 var menu_nya =`${listmenu(sender,prefix,ad,namenya,premnya,usernya,romnya,tanggal,jam,no)}`
 let btn_menu = [
 {buttonId: `${prefix}sewabot`, buttonText: { displayText: 'Sewa Bot' }, type: 1 },
@@ -1131,19 +1138,6 @@ var text_wikimedia =`*WIKIMEDIA SEARCH*
 *author:* wikimedia`
 conn.sendMessage(from, { image:{url:wk.result.image}, caption:text_wikimedia}, {quoted:msg})
 })
-}
-break
-case 'joker':
-case 'digital':
-case 'nulis':
-case 'nulis2':
-case 'quoteser':
-case 'quobucin':{
-if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
-if (!q) return reply(`Contoh:\n${prefix+command} saya bukan wibu`)
-reply(mess.wait)
-var buc = `https://saipulanuar.ga/api/textmaker/${command}?text=${q}&apikey=jPHjZpQF`
-conn.sendMessage(from, { image:{url:buc}, caption:'Done!'}, {quoted:msg})
 }
 break
 case 'attp2':
@@ -1281,15 +1275,6 @@ reply(`𝗕𝗢𝗧 𝗜𝗡𝗙𝗢
 • Terdaftar : ( ${("id", db_user).length} )
 • Room Chat : ( ${db_menfes.length} )`)
 break
-case 'ssweb-pc':
-case 'ssweb-hp':{
-if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
-if (!q) return reply(`Masukan parameter url\n*Contoh:*\n${prefix+command} https://google.com`)
-reply(mess.wait)
-let anu =`https://leyscoders-api.herokuapp.com/api/${command}?url=${q}&apikey=IkyOgiwara`
-conn.sendMessage(from, { image: {url: anu}, caption: 'Done!'}, {quoted:msg})
-}
-break
 case 'setfooter':
 if (!isOwner) return reply(mess.OnlyOwner)
 if (!q) return reply(`Masukan parameter text\n*Contoh:*\n#setfooter ${setting.footer}`)
@@ -1323,6 +1308,15 @@ teks_db +=`*User${no++} ${x.name}*\n*ID: @${x.id.split('@')[0]}*\n*Premium: ${x.
 reply(teks_db)
 }
 break
+case 'join': {
+                if (!isOwner) return reply(mess.OnlyOwner)
+                if (!q) return reply('Masukkan Link Group!')
+                if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
+                reply(mess.wait)
+                let result = args[0].split('https://chat.whatsapp.com/')[1]
+                await conn.groupAcceptInvite(result).then((res) => m.reply(push(res))).catch((err) => m.reply(push(err)))
+            }
+            break
 case 'addprem':{
 if (!isOwner) return reply(mess.OnlyOwner)
 if (!q) return reply('*Contoh:*\n#addprem 628xxx')
@@ -1342,6 +1336,12 @@ if (cekUser("premium", number_one) == false) return reply('User tersebut tidak p
 setUser("±premium", number_one, false)
 reply(`*PREMIUM*\n*ID:* @${number_one.split('@')[0]}\n*Status:* tidak`)
 }
+break
+case 'bot': case 'hai': 
+reply(`Apa Syg😘`)
+break
+case 'asalamualaikum': case 'assalamualaikum': 
+reply(`Walaikumusalam`)
 break
 case 'owner':{
 if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
@@ -1383,21 +1383,21 @@ Rp10.000 › *permanen*
 @${setting.ChatOwner.split('@')[0]}`, [setting.ChatOwner])
 break
 case 'sewabot':
-mentions(`*SEWA BOT*
+mentions(`*PRICE LIST SEWA BOT*
 
-*List Harga*
-Rp3.000 › 5day
-Rp5.000 › 10day
-Rp7.000 › 15day
-Rp10.000 › *Permanen*
+*Harga Sewa*
+30 Hari = 5.000
+Permanen = 10.000 *1(GC)*
+Permanen = 15.000 *2(GC)*
 
-*day › hari*
+*Keuntungan :*
+- Bot Masuk Sesuai Waktu Sewa
+- Antilink
+- On 24 Jam
+- Fitur Banyak
+- Welcome
+- Dan Lainnya
 
-*Keuntungan Sewabot*
-- _Bisa Add Bot 1 Group_
-- _Bisa Gunain Fitur Admin_
-
-*Minat Sewabot?*
 *Hubungi Owner*
 @${setting.ChatOwner.split('@')[0]}`, [setting.ChatOwner])
 break
@@ -2002,14 +2002,6 @@ reply(`*Mohon tunggu, sedang mengirim repository..*`)
 conn.sendMessage(from, { document: { url: url }, fileName: filename, mimetype: 'application/zip' }, { quoted: msg }).catch((err) => reply('Maaf link github yang kamu berikan di private, dan tidak bisa di jadikan file'))
 }
 break
-case 'badgirlserti': case 'goodgirlserti': case 'bucinserti': case 'fuckgirlserti': case 'toloserti': {
-if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
-if (!q) return reply(`*Contoh:*\n${prefix + command} text`)
-var anu = await getBuffer(`https://api.lolhuman.xyz/api/${command}?apikey=SadTeams&name=${q}`)
-reply(mess.wait)
-conn.sendMessage(from, { image: anu, caption: `${command}` }, { quoted: msg }).catch((err) => reply('Maaf server LolHuman sedang down'))
-}
-break
 case 'fitnah':
 if (!isGroup) return reply(mess.OnlyGrup)
 if (!q) return reply(`Kirim perintah #*${command}* @tag|pesantarget|pesanbot`)
@@ -2339,39 +2331,6 @@ fs.unlinkSync(media)
 reply(`*Reply video dengan pesan ${prefix+command}*`)
 }
 break
-case 'base64':
-case 'base32':{
-if (!q) return reply(`Example :\n${prefix+command} Lexxy`)
-reply(mess.wait)
-var yogi = await fetchJson(`https://api-yogipw.herokuapp.com/api/base?type=${command}&encode=${q}`)
-var text_encode =`*Hasil Result*
- *type:* ${yogi.result.type}
- *encode:* ${yogi.result.encode}
- *string:* ${yogi.result.string}`
-reply(text_encode)
-}
-break
-case 'debase64':{
-if (!q) return reply(`Example :\n${prefix+command} cA==`)
-reply(mess.wait)
-var yogi = await fetchJson(`https://api-yogipw.herokuapp.com/api/base?type=base64&decode=${q}`)
-var text_encode =`*Hasil Result*
- *type:* ${yogi.result.type}
- *encode:* ${yogi.result.enc}
- *string:* ${yogi.result.string}`
-reply(text_encode)
-}
-break
-case 'debase32':{
-reply(mess.wait)
-var yogi = await fetchJson(`https://api-yogipw.herokuapp.com/api/base?type=base32&decode=${q}`)
-var text_encode =`*Hasil Result*
- *type:* ${yogi.result.type}
- *encode:* ${yogi.result.enc}
- *string:* ${yogi.result.string}`
-reply(text_encode)
-}
-break
 
 // CONVERT
 case 'toimg': case 'toimage':
@@ -2549,13 +2508,6 @@ const eyy =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','1
 const yn = eyy[Math.floor(Math.random() * eyy.length)]
 conn.sendMessage(from, { text: `${yn}%` }, { quoted: msg })
 break
-// TEXTPRO
-case 'blackpink':case 'neon':case 'greenneon':case 'advanceglow':case 'futureneon':case 'sandwriting':case 'sandsummer':case 'sandengraved':case 'metaldark':case 'neonlight':case 'holographic':case 'text1917':case 'minion':case 'deluxesilver':case 'newyearcard':case 'bloodfrosted':case 'halloween':case 'jokerlogo':case 'fireworksparkle':case 'natureleaves':case 'bokeh':case 'toxic':case 'strawberry':case 'box3d':case 'roadwarning':case 'breakwall':case 'icecold':case 'luxury':case 'cloud':case 'summersand':case 'horrorblood':case 'thunder':{
-if (!q) return reply(`_Contoh_\n${prefix+command} nama`)
-reply(mess.wait)
-conn.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/textprome/${command}?apikey=${setting.api_lolkey}&text=${q}`}, caption: `Nih ${command}📸` }, { quoted: msg })
-}
-break
 // PHOTOOXY
 case "metallic":
 case "naruto":
@@ -2566,20 +2518,6 @@ if (!q) return reply(`_Contoh_\n${prefix+command} nama`)
 reply(mess.wait)
 let photooxy =`https://api.nataganz.com/api/photooxy/${command}?text=${q}&apikey=Pasha`
 conn.sendMessage(from, {image: { url: photooxy }, caption: `Hasil dari ${command}`}, { quoted: msg})
-}
-break
-case 'wetglass':case 'multicolor3d':case 'watercolor':case 'luxurygold':case 'galaxywallpaper':case 'lighttext':case 'beautifulflower':case 'puppycute':case 'royaltext':case 'heartshaped':case 'birthdaycake':case 'galaxystyle':case 'hologram3d':case 'greenneon':case 'glossychrome':case 'greenbush':case 'metallogo':case 'noeltext':case 'glittergold':case 'textcake':case 'starsnight':case 'wooden3d':case 'textbyname':case 'writegalacy':case 'galaxybat':case 'snow3d':case 'birthdayday':case 'goldplaybutton':case 'silverplaybutton':case 'freefire':{
-if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
-if (!q) reply(`Contoh: #${command} nama`)
-reply(mess.wait)
-conn.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/ephoto1/${command}?apikey=${setting.api_lolkey}&text=${q}`}, caption: `Nih ${command}📸` }, { quoted: msg })
-}
-break
-case 'shadow':case 'cup':case 'cup1':case 'romance':case 'smoke':case 'burnpaper':case 'lovemessage':case 'undergrass':case 'love':case 'coffe':case 'woodheart':case 'woodenboard':case 'summer3d':case 'wolfmetal':case 'nature3d':case 'underwater':case 'goldenrose':case 'summernature':case 'letterleaves':case 'glowingneon':case 'fallleaves':case 'flamming':case 'harrypotter':case 'carvedwood':{
-if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
-if (!q) reply(`Contoh: #${command} nama`)
-reply(mess.wait)
-conn.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/photooxy1/${command}?apikey=${setting.api_lolkey}&text=${q}`}, caption: `Nih ${command}📸` }, { quoted: msg })
 }
 break
 case 'boneka': case 'cecan': case 'cogan': case 'darkjokes': case 'islamic': case 'mobil': case 'programing': case 'tatasurya': case 'wallhp':
@@ -2604,65 +2542,23 @@ case 'chiisaihentai':case 'trap':case 'blowjob':case 'yaoi':case 'ecchi':case 'a
 if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
 if (cekUser("premium", sender) == false) return reply(mess.OnlyPrem)
 reply(mess.wait)
-conn.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=${setting.api_lolkey}`}, caption: `Nih ${command}📸` }, { quoted: msg })
+conn.sendMessage(from, { image: { url: `https://api-mirip-zeks.hitomimd.repl.co/api/nsfw/blowjob?apikey=Alphabot`}, caption: `Nih ${command}📸` }, { quoted: msg })
 }
 break
 case 'bj':case 'ero':case 'cum':case 'feet':case 'yuri':case 'trap':case 'lewd':case 'feed':case 'eron':case 'solo':case 'gasm':case 'poke':case 'anal':case 'holo':case 'tits':case 'kuni':case 'kiss':case 'erok':case 'smug':case 'baka':case 'solog':case 'feetg':case 'lewdk':case 'waifu':case 'pussy':case 'femdom':case 'cuddle':case 'hentai':case 'eroyuri':case 'cum_jpg':case 'blowjob':case 'erofeet':case 'holoero':case 'classic':case 'erokemo':case 'fox_girl':case 'futanari':case 'lewdkemo':case 'wallpaper':case 'pussy_jpg':case 'kemonomimi':case 'nsfw_avatar':{
 if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
 if (cekUser("premium", sender) == false) return reply(mess.OnlyPrem)
 reply(mess.wait)
-conn.sendMessage(from, { image: { url: `https://api.lolhuman.xyz/api/random2/${command}?apikey=${setting.api_lolkey}`}, caption: `Nih ${command}📸` }, { quoted: msg})
-}
-break
-case 'spamcall':{
-if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
-if (cekUser("premium", sender) == false) return reply(mess.OnlyPrem)
-if (!q) return reply(`Kirim perintah\n#${command} nomor\n\nContoh? #${command} 8xxxx\nNomor awal dari 8 bukan 62/08`)
-var data = await fetchJson(`https://arugaz.herokuapp.com/api/spamcall?no=${q}`).catch(() => reply(mess.error.api))
-if (data.status == false) {
-reply(data.msg)
-} else {
-reply(data.logs)
-}
+conn.sendMessage(from, { image: { url: `https://saipulanuar.ga/api/nsfwloli`}, caption: `Nih ${command}📸` }, { quoted: msg})
 }
 break
 // LOGO MAKER
-case 'girlneko': case 'gilrneko':
-if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
-if (!q1 && !q2) return reply("Masukkan text1&text2\nContoh? #girlneko aku&kamu")
-reply("[❗] SEDANG DIPROSES")
-conn.sendMessage(from, {image:{url:`https://ziy.herokuapp.com/api/maker/girlneko?text1=${q1}&text2=${q2}&apikey=xZiyy`}, caption:"done!!", mentions:[sender]},{quoted:msg})
-break
-case 'sadboy':
-if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
-if (!q1 && !q2) return reply("Masukkan text1&text2\nContoh? #sadboy aku&kamu")
-reply("[❗] SEDANG DIPROSES")
-conn.sendMessage(from, {image:{url:`https://ziy.herokuapp.com/api/maker/sadboy?text1=${q1}&text2=${q2}&apikey=xZiyy`}, caption:"done!!", mentions:[sender]},{quoted:msg})
-break
-case 'kaneki': case 'rem': case 'lolimaker':
-if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
-if (!q) return reply(`Masukkan text\nContoh: #${command} bot`)
-reply("[❗] SEDANG DIPROSES")
-conn.sendMessage(from, {image:{url:`https://ziy.herokuapp.com/api/maker/${command}?nama=${q}&apikey=xZiyy`}, caption:"done!!", mentions:[sender]},{quoted:msg})
-break
 case 'waifu':case 'lick':case 'kiss':case 'awoo':case 'hug':case 'cry':case 'cuddle':case 'bully':case 'megumin':case 'shinobu':case 'neko':case 'slap':case 'wink':case 'dance':case 'poke':case 'glomp':case 'bite':case 'nom':case 'handhold':case 'highfive':case 'wave':case 'smile':case 'yeet':case 'bonk':case 'smug':case 'pat':
 if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
 if (cekUser("premium", sender) == false) return reply(mess.OnlyPrem)
 reply("[❗] SEDANG DIPROSES")
 fetchJson(`https://api.waifu.pics/sfw/${command}`).then(x => {
 conn.sendMessage(from, {image:{url:x.url}, caption:"Done!!", mentions:[sender]},{quoted:msg})})
-break
-case 'dadu':
-case 'patrick':
-case 'amongus':
-case 'gawrgura':
-case 'anjing':
-case 'bucinstick':{
-if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
-reply(mess.wait)
-let buffer = `https://api.lolhuman.xyz/api/sticker/${command}?apikey=${setting.api_lolkey}`
-conn.sendMessage(from, { sticker:{url:buffer}, mimetype:'image/webp'}, { quoted: msg })
-}
 break
 // PRIMBON
 case 'ramalanjodoh': case 'ramaljodoh': {
