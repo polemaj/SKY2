@@ -3297,8 +3297,8 @@ conn.sendMessage(m.chat, { image: { url: random }, caption: `Nih Kak` }, { quote
 }
 break
 case 'jadibot': {
-if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
-if (cekUser("premium", sender) == false) return reply(mess.OnlyPrem)
+if (cekUser("id", sender) == null) return reply(mess.OnlyOwner)
+if (cekUser("premium", sender) == false) return reply(mess.OnlyOwner)
 if (isGroup) return reply('Gunakan bot di privat chat')
 jadibot(conn, msg, from)
 }
