@@ -24,8 +24,6 @@ return`
  > ${prefix}owner
  > ${prefix}infobot
  > ${prefix}donasi
- > ${prefix}jadibot
- > ${prefix}listjadibot
  > ${prefix}sewabot
  > ${prefix}gcbot
 
