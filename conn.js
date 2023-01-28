@@ -1047,7 +1047,7 @@ _Admin 1 : 6285692242216_
 _Rp50.000 - ( Topup & Fitur 300+ )_
 _Rp100.000 - ( Topup & Fitur 600+ )_
 
-*_Ready Nokos Whatsapp +1_*
+*_Ready Nokos Whatsapp_*
 *_Harga Murah? Chat Admin_*
 *_Open Stok Terbatas⚠️_*
 
@@ -1060,10 +1060,16 @@ _Rp100.000 - ( Topup & Fitur 600+ )_
 reply(menu_list)
 }
 break
+case 'commanderonlylist':{
+if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
+var commanderonly = `Coming soon`
+reply(commanderonly)
+}
+break
 case 'gcbot':{
 if (cekUser("id", sender) == null) return reply(mess.OnlyUser)
 var strip = '```'
-var menu_list =`https://chat.whatsapp.com/KqGx272nHhV6lW1qxLmNOp`
+var menu_list =`https://bit.ly/Sycho-RGA`
 reply(menu_list)
 }
 break
