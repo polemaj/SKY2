@@ -1,6 +1,6 @@
 { 
-  "ChatOwner": "6285692242216@s.whatsapp.net",
-  "ownerNumber": "6285692242216@s.whatsapp.net",
+  "ChatOwner": "62@s.whatsapp.net",
+  "ownerNumber": "62@s.whatsapp.net",
   "botName": "𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐛𝐨𝐭",
   "ownerName": "V",
   "sessionName": "session",
@@ -8,6 +8,6 @@
   "api_lolkey": "SadTeams",
   "group":{
   "judul": "Forum Bot WhatsApp",
-  "link": "https://chat.whatsapp.com/KqGx272nHhV6lW1qxLmNOp"
+  "link": "https"
   }
 }
